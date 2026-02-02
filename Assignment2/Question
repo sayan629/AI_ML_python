@@ -1,5 +1,5 @@
 (Assignment4)
-Assignment Problems
+
 Concept: Classes & Objects
 Q1. Create a class with attributes account_number, owner_name,
 and balance.
@@ -24,13 +24,8 @@ negative, roll number has to be between 1 &100&name cannot be empty).
 
 Concept: Function Overriding
 Q4. Create a class Shape with a method area().
-Create subclasses Circle , , and that override the area()
-method.
-Employee
-Intern FullTimeEmployee ContractEmployee
-Person
-Player
-Omnivore
+Create subclasses Circle , Rectangle and Triangle that override the area()method.
+
 
 
 Concept: Inheritance
@@ -42,7 +37,7 @@ engine_cc (in Bike).
 Concept: Abstraction
 Q6. Create an abstract class with an abstract method
 calculate_salary().
-Create subclasses , , and that
+Create subclasses Intern, FullTimeEmployee and Contract Employee that
 implement the method differently.
 
 
@@ -63,7 +58,7 @@ Track how many players were created.
 
 
 Concept: Multiple Inheritance
-Q9. Create the following classes: Herbivore , Carnivore , with some
+Q9. Create the following classes: Herbivore , Carnivore , omnivore with some
 attributes & methods. Then create a class Bear that inherits from all the above
 classes to showcase how multiple inheritance works.
 
@@ -78,6 +73,3 @@ And we have to implement functions:
 • sending messages
 • viewing chat history
 • user joining and leaving the chatroom
-User
-Message
-ChatRoom
