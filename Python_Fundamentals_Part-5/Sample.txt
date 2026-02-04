@@ -1,0 +1,3 @@
+This is the sample file 
+for demo of
+FILE I/O operation.
