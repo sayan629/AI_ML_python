@@ -1,0 +1,9 @@
+{
+    "name":"Sayan",
+    "isStudent":true, 
+    "address":{
+        "city":"Bankura",
+        "Country":"India"
+    },
+    "Subjects":["Python","Data Science"]
+}
