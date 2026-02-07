@@ -7,5 +7,5 @@ for val in nums:
         break
     idx+=1
 
-
+ 
     

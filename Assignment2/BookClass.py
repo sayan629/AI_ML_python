@@ -5,7 +5,7 @@ class Book:
         self.reviews =[]
     
     def add_reviwes(self,review):
-        self.reviews.append(review)
+        self.reviews.append(review)  #append()is used to insert each new review into the reviews list so they can be counted and displayed later.
     
     def count_reviews(self):
         return len(self.reviews)
