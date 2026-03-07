@@ -2,7 +2,7 @@
 # 📊 Data Acquisition & SQL for Data Science
 
 ## Data-to-Strategy: Transforming Multi-Channel Input into Actionable Growth
-https://github.com/sayan629/AI_ML_python/blob/5cd358b20bbc69db2044de6ae4ed1374df2eab3b/(12)%20Data%20Collection/.virtual_documents/1sr%20pic.png
+![image alt](https://github.com/sayan629/AI_ML_python/blob/f0502db466e0957e47ef2863c0421dfad75e0293/(12)%20Data%20Collection/.virtual_documents/1sr%20pic.png)
 ---
 
 
