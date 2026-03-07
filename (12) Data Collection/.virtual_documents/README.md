@@ -5,7 +5,9 @@
 ![image alt](https://github.com/sayan629/AI_ML_python/blob/f0502db466e0957e47ef2863c0421dfad75e0293/(12)%20Data%20Collection/.virtual_documents/1sr%20pic.png)
 ---
 
-
+## Blueprint for a Modern Data Architecture: Frome Ingestion to Inteligence
+![image alt](https://github.com/sayan629/AI_ML_python/blob/c6da859206fb9125b40803c6452af76359ba124c/(12)%20Data%20Collection/.virtual_documents/pic%202.png)
+---
 
 ![Python](https://img.shields.io/badge/Python-Data%20Science-blue)
 ![SQL](https://img.shields.io/badge/SQL-Database-orange)
