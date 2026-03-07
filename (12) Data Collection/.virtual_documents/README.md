@@ -1,6 +1,6 @@
 # 📊 Data Acquisition & SQL for Data Science
 
-"D:\1sr pic.png"
+
 
 ![Python](https://img.shields.io/badge/Python-Data%20Science-blue)
 ![SQL](https://img.shields.io/badge/SQL-Database-orange)
