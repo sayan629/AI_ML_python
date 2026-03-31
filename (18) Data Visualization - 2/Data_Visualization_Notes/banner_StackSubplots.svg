@@ -1,0 +1,64 @@
+<svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" font-family="monospace, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1b2a"/>
+      <stop offset="100%" style="stop-color:#1b2838"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="200" fill="url(#bg2)" rx="12"/>
+
+  <!-- Stack Plot (left) -->
+  <g transform="translate(30, 25)">
+    <!-- stacked areas -->
+    <!-- Social layer -->
+    <polygon points="0,120 25,115 50,108 75,100 100,90 125,80 150,68" fill="#7c4dff" opacity="0.7"/>
+    <polygon points="0,120 25,115 50,108 75,100 100,90 125,80 150,68 150,200 0,200" fill="#7c4dff" opacity="0.3"/>
+    <!-- Organic layer -->
+    <polygon points="0,90 25,83 50,73 75,65 100,55 125,42 150,26 150,68 125,80 100,90 75,100 50,108 25,115 0,120" fill="#26c6da" opacity="0.7"/>
+    <!-- Direct layer -->
+    <polygon points="0,60 25,52 50,40 75,30 100,18 125,5 150,0 150,26 125,42 100,55 75,65 50,73 25,83 0,90" fill="#ffca28" opacity="0.7"/>
+    <!-- Axis -->
+    <line x1="0" y1="140" x2="155" y2="140" stroke="#ffffff30" stroke-width="1"/>
+    <!-- Labels -->
+    <text x="155" y="110" fill="#7c4dff" font-size="8">Social</text>
+    <text x="155" y="75"  fill="#26c6da" font-size="8">Organic</text>
+    <text x="155" y="40"  fill="#ffca28" font-size="8">Direct</text>
+    <text x="30" y="158" fill="#aaaaaa" font-size="10">Stack Plot</text>
+  </g>
+
+  <!-- 2x2 Subplot grid -->
+  <g transform="translate(215, 20)">
+    <!-- grid boxes -->
+    <rect x="0"  y="0"  width="65" height="55" fill="#ffffff08" stroke="#ffffff20" stroke-width="1" rx="3"/>
+    <rect x="70" y="0"  width="65" height="55" fill="#ffffff08" stroke="#ffffff20" stroke-width="1" rx="3"/>
+    <rect x="0"  y="60" width="65" height="55" fill="#ffffff08" stroke="#ffffff20" stroke-width="1" rx="3"/>
+    <rect x="70" y="60" width="65" height="55" fill="#ffffff08" stroke="#ffffff20" stroke-width="1" rx="3"/>
+    <!-- sqrt curve top-left -->
+    <polyline points="5,50 15,40 25,34 35,30 45,27 55,25 63,24" fill="none" stroke="#4fc3f7" stroke-width="1.5"/>
+    <!-- linear top-right -->
+    <polyline points="75,50 90,40 105,30 120,20 130,12" fill="none" stroke="#81c784" stroke-width="1.5"/>
+    <!-- square bottom-left -->
+    <polyline points="5,112 15,105 25,92 35,75 45,58 55,46 63,38" fill="none" stroke="#ffb74d" stroke-width="1.5"/>
+    <!-- cube bottom-right -->
+    <polyline points="75,115 85,110 95,100 105,83 115,60 125,30 130,12" fill="none" stroke="#f48fb1" stroke-width="1.5"/>
+    <!-- mini titles -->
+    <text x="3"  y="10" fill="#4fc3f7" font-size="7">√x</text>
+    <text x="73" y="10" fill="#81c784" font-size="7">2x</text>
+    <text x="3"  y="70" fill="#ffb74d" font-size="7">x²</text>
+    <text x="73" y="70" fill="#f48fb1" font-size="7">x³</text>
+    <text x="25" y="130" fill="#aaaaaa" font-size="10">Subplots (2×2)</text>
+  </g>
+
+  <!-- Main title -->
+  <text x="530" y="70"  fill="#ffffff" font-size="23" font-weight="bold" text-anchor="middle">📈 Stack Plots</text>
+  <text x="530" y="97"  fill="#26c6da" font-size="17" text-anchor="middle">Subplots &amp; Modern Matplotlib</text>
+  <text x="530" y="122" fill="#aaaaaa" font-size="12" text-anchor="middle">OOP API · fig/ax · tight_layout · stackplot</text>
+
+  <!-- Badges -->
+  <rect x="435" y="140" width="80"  height="22" fill="#306998" rx="4"/>
+  <text x="475" y="155" fill="white" font-size="11" text-anchor="middle">Python 3</text>
+  <rect x="525" y="140" width="100" height="22" fill="#c0420a" rx="4"/>
+  <text x="575" y="155" fill="white" font-size="11" text-anchor="middle">Matplotlib</text>
+  <rect x="635" y="140" width="70"  height="22" fill="#013243" rx="4"/>
+  <text x="670" y="155" fill="white" font-size="11" text-anchor="middle">NumPy</text>
+</svg>
