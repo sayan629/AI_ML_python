@@ -23,6 +23,7 @@
 ## 🖼️ Visual Overview
 
 <div align="center">
+
 <table>
 <tr>
 <td align="center" width="33%">
@@ -34,11 +35,12 @@
 <br/><sub><b>📐 Bayes' Theorem</b></sub>
 </td>
 <td align="center" width="33%">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Standard_deviation_diagram_micro.svg/800px-Standard_deviation_diagram_micro.svg.png" width="260" alt="Standard Deviation"/>
+<img src="./images/std_dev.svg" width="260" alt="Standard Deviation"/>
 <br/><sub><b>📊 Standard Deviation</b></sub>
 </td>
 </tr>
 </table>
+
 </div>
 
 ---
