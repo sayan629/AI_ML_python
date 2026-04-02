@@ -35,7 +35,7 @@
 <br/><sub><b>📐 Bayes' Theorem</b></sub>
 </td>
 <td align="center" width="33%">
-<img src="./images/std_dev.svg" width="260" alt="Standard Deviation"/>
+<img src=""D:\PYTHON_CODE\(19) Maths for AI - (Probability)\std_dev.png" width="260" alt="Standard Deviation"/>
 <br/><sub><b>📊 Standard Deviation</b></sub>
 </td>
 </tr>
