@@ -33,7 +33,7 @@ Traditional:          Machine Learning:
 > Models are trained using **labelled data** `(Input → Output)`
 
 <p align="center">
-  <img src="https://www.softhouse.se/wp-content/uploads/2023/09/supervised-vs-unsupervised-learning.png" alt="Supervised vs Unsupervised Learning" width="700"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Supunsupclassification.svg/1024px-Supunsupclassification.svg.png" alt="Supervised vs Unsupervised Learning" width="700"/>
 </p>
 
 #### 🏷️ What is Labelled Data?
@@ -67,7 +67,7 @@ Supervised Learning ┤   e.g., [cat / dogs]
 - Example: `[iPhone + Charger]` — grouping similar items together
 
 <p align="center">
-  <img src="https://developers.google.com/static/machine-learning/glossary/images/clustering.svg" alt="Clustering Visualization" width="600"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cluster-2.svg/1200px-Cluster-2.svg.png" alt="Clustering Visualization" width="500"/>
 </p>
 
 ```
@@ -86,7 +86,7 @@ Dataset (no labels)          Clustered Output
 - It gets rewarded for correct actions and penalized for wrong ones
 
 <p align="center">
-  <img src="https://www.mathworks.com/discovery/reinforcement-learning/_jcr_content/mainParsys/image_1621705020.adapt.full.medium.jpg/1726496892913.jpg" alt="Reinforcement Learning Diagram" width="700"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Reinforcement_learning_diagram.svg/1200px-Reinforcement_learning_diagram.svg.png" alt="Reinforcement Learning Diagram" width="600"/>
 </p>
 
 **Example:** Training Robots 🤖
@@ -131,7 +131,7 @@ Machine Learning
 ---
 
 <p align="center">
-  <i>📓 Notes from ML class — handwritten & digitized</i>
+  <i>📓 Notes from ML class —  digitized</i>
   <br><br>
   <strong>✍️ Made by Sayan</strong>
 </p>
