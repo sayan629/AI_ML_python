@@ -56,7 +56,7 @@ The model **learns the mapping** from inputs to outputs during training, then us
 
 ```
                  ┌─────────────────────────────────┐
-                 │           FEATURES               │
+                 │           FEATURES              │
                  └────────────┬────────────────────┘
                               │
            ┌──────────────────┴──────────────────┐
@@ -85,7 +85,7 @@ The model **learns the mapping** from inputs to outputs during training, then us
  │  Raw Data  ──►  Preprocess  ──►  Select Model           │
  │                    +                   │                │
  │              Feature Engg.      Train / Test            │
- │              (Encoding)               │                │
+ │              (Encoding)               │                 │
  │                                 Check Fit               │
  │                              (Underfit/Overfit)         │
  └─────────────────────────────────────────────────────────┘
