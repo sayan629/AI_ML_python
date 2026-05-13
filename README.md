@@ -1,8 +1,11 @@
 <div align="center">
 
-[![header](https://readme-typing-svg.demolab.com?font=Fira+Code&size=36&duration=3000&pause=1000&color=A78BFA&center=true&vCenter=true&width=900&height=100&lines=🚀+AI+%26+ML+ROADMAP;From+Zero+to+AI+Engineer;A+Battle-Tested+Path)](https://www.linkedin.com/in/sayanpal04)
+[![header](https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=46&duration=2500&pause=800&color=00F5FF&background=0D1117&center=true&vCenter=true&multiline=false&width=900&height=80&lines=🚀+AI+%26+ML+ROADMAP)](https://www.linkedin.com/in/sayanpal04)
+
+[![subheader](https://readme-typing-svg.demolab.com?font=Rajdhani&weight=700&size=28&duration=3000&pause=1000&color=F8F&background=0D1117&center=true&vCenter=true&width=900&height=55&lines=From+Zero+to+AI+Engineer+⚡;Build.+Break.+Repeat.+🔥;The+Only+Roadmap+You'll+Ever+Need+✅)](https://www.linkedin.com/in/sayanpal04)
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
+
 
 <br/>
 
@@ -390,13 +393,13 @@ After completing this roadmap, you will:
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
 
-[![footer](https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=800&color=60A5FA&center=true&vCenter=true&width=900&height=60&lines=Happy+Learning+%F0%9F%9A%80;Keep+Building+%F0%9F%94%A5;Stay+Consistent+%E2%9C%85;Break+Things.+Fix+Them.+Repeat.)](https://www.linkedin.com/in/sayanpal04)
+[![footer](https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=22&duration=2500&pause=800&color=00F5FF&background=0D1117&center=true&vCenter=true&width=900&height=60&lines=Happy+Learning+🚀;Keep+Building+🔥;Stay+Consistent+✅;Break+Things.+Fix+Them.+Repeat.)](https://www.linkedin.com/in/sayanpal04)
 
 ---
 
 ### 👨‍💻 Created by
 
 [![LinkedIn](https://img.shields.io/badge/Sayan-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sayanpal04)
-
+[![Instagram](https://img.shields.io/badge/_sayan__003._-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/_sayan_003._)
 
 </div>
