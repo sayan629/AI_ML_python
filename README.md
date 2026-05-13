@@ -18,7 +18,7 @@
 
 ```
 ╔══════════════════════════════════════════════════════════════════╗
-║   Python → ML → Deep Learning → GenAI → Engineering → Deploy    ║
+║   Python → ML → Deep Learning → GenAI → Engineering → Deploy     ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
 
@@ -38,11 +38,11 @@
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
 │                                                                     │
-│   [ Phase 1 ]         [ Phase 2 ]        [ Phase 3 ]               │
+│   [ Phase 1 ]         [ Phase 2 ]        [ Phase 3 ]                │
 │   Python &       →    Machine       →    Deep                       │
 │   Data Fnd.           Learning           Learning                   │
 │                                                                     │
-│   [ Phase 4 ]         [ Phase 5 ]        [ Phase 6 ]               │
+│   [ Phase 4 ]         [ Phase 5 ]        [ Phase 6 ]                │
 │   Generative     →    AI Eng. &     →    Real-World                 │
 │   AI (GenAI)          Deployment         Projects                   │
 │                                                                     │
