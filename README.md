@@ -1,13 +1,14 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=200&section=header&text=AI%20%26%20ML%20ROADMAP&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=From%20Zero%20to%20AI%20Engineer%20%E2%80%94%20A%20Battle-Tested%20Path&descAlignY=58&descSize=18&animation=fadeIn" />
+# 🚀 AI & ML ROADMAP
+### *From Zero to AI Engineer — A Battle-Tested Path*
 
 <br/>
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](http://makeapullrequest.com)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=for-the-badge)](http://makeapullrequest.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Stars](https://img.shields.io/github/stars/?style=for-the-badge&color=gold)](.)
-[![Last Updated](https://img.shields.io/badge/Updated-2025-blue?style=for-the-badge)](.)
+[![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4%EF%B8%8F-red?style=for-the-badge)](https://www.linkedin.com/in/sayanpal04)
+[![Updated](https://img.shields.io/badge/Updated-2026-blue?style=for-the-badge)](.)
 
 <br/>
 
@@ -380,7 +381,7 @@ After completing this roadmap, you will:
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=120&section=footer" />
+---
 
 **If this roadmap helped you, please ⭐ star the repo and share it with a friend!**
 
