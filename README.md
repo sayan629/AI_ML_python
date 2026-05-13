@@ -1,5 +1,9 @@
 <div align="center">
 
+[![header](https://readme-typing-svg.demolab.com?font=Fira+Code&size=36&duration=3000&pause=1000&color=A78BFA&center=true&vCenter=true&width=900&height=100&lines=🚀+AI+%26+ML+ROADMAP;From+Zero+to+AI+Engineer;A+Battle-Tested+Path)](https://www.linkedin.com/in/sayanpal04)
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
+
 # 🚀 AI & ML ROADMAP
 ### *From Zero to AI Engineer — A Battle-Tested Path*
 
@@ -387,12 +391,15 @@ After completing this roadmap, you will:
 
 <br/>
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
+
+[![footer](https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=800&color=60A5FA&center=true&vCenter=true&width=900&height=60&lines=Happy+Learning+%F0%9F%9A%80;Keep+Building+%F0%9F%94%A5;Stay+Consistent+%E2%9C%85;Break+Things.+Fix+Them.+Repeat.)](https://www.linkedin.com/in/sayanpal04)
+
 ---
 
 ### 👨‍💻 Created by
 
 [![LinkedIn](https://img.shields.io/badge/Sayan-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sayanpal04)
 
-*Connect with me on LinkedIn → [Sayan](https://www.linkedin.com/in/sayanpal04)*
 
 </div>
