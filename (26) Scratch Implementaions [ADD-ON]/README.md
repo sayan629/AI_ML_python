@@ -154,7 +154,9 @@ class LinearRegressionOLS():
 
 ```
            
-$g(z) = \frac{1}{1 + e^{-x}}$   where  z = θ₀ + θ₁x  =  θᵀx
+Sigmoid Function
+g(z)=11+e−xg(z) = \frac{1}{1 + e^{-x}}
+g(z)=1+e−x1​   where  z = θ₀ + θ₁x  =  θᵀx
         
 ```
 
