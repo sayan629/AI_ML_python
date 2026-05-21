@@ -51,6 +51,7 @@
 J(θ) = ─── · Σ  ( ŷ⁽ⁱ⁾ - y⁽ⁱ⁾ )²
         2m  i=1
 
+        1    m
      = ─── · Σ  ( θ₀ + θ₁x⁽ⁱ⁾ - y⁽ⁱ⁾ )²
         2m  i=1
 ```
@@ -86,7 +87,7 @@ OLS gives a **closed-form solution** called the **Normal Equation**:
 
 ```
 ┌─────────────────────────────────┐
-│  θ = (Xᵀ · X)⁻¹ · Xᵀ · y      │  ← Closed Form Equation
+│  θ = (Xᵀ · X)⁻¹ · Xᵀ · y        │  ← Closed Form Equation
 └─────────────────────────────────┘
 ```
 
@@ -152,9 +153,9 @@ class LinearRegressionOLS():
 ### Sigmoid Function
 
 ```
-           1
-g(z) = ────────    where  z = θ₀ + θ₁x  =  θᵀx
-        1 + e⁻ᶻ
+           
+$g(z) = \frac{1}{1 + e^{-x}}$   where  z = θ₀ + θ₁x  =  θᵀx
+        
 ```
 
 ```
