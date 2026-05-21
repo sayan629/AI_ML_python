@@ -1,4 +1,3 @@
-
 # 🧠 ML from Scratch — Implementation Notes
 
 > *Hand-crafted notes covering Linear Regression, Logistic Regression, and KNN — implemented from scratch using NumPy.*
@@ -39,13 +38,34 @@
 
 **Cost Function:**
 
-$$J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \left( \hat{y}^{(i)} - y^{(i)} \right)^2 = \frac{1}{2m} \sum_{i=1}^{m} \left( \theta_0 + \theta_1 x^{(i)} - y^{(i)} \right)^2$$
+```
+         1   m
+J(θ) = ─── · Σ  ( ŷ⁽ⁱ⁾ - y⁽ⁱ⁾ )²
+        2m  i=1
 
-**Gradients:**
+     = ─── · Σ  ( θ₀ + θ₁x⁽ⁱ⁾ - y⁽ⁱ⁾ )²
+        2m  i=1
+```
 
-$$\frac{\partial J(\theta)}{\partial \theta_0} = \frac{1}{m} \sum_{i=1}^{m} \left( \hat{y}^{(i)} - y^{(i)} \right) \quad \Rightarrow \quad \frac{1}{m} \cdot \texttt{np.sum(y\_pred - y)}$$
+**Gradient w.r.t. θ₀:**
 
-$$\frac{\partial J(\theta)}{\partial \theta_1} = \frac{1}{m} \sum_{i=1}^{m} x^{(i)} \left( \hat{y}^{(i)} - y^{(i)} \right) \quad \Rightarrow \quad \frac{1}{m} \cdot \texttt{np.dot(X.T, y\_pred - y)}$$
+```
+∂J(θ)     1   m
+───── = ─── · Σ  ( ŷ⁽ⁱ⁾ - y⁽ⁱ⁾ )
+ ∂θ₀     m  i=1
+
+  ⟹  (1/m) * np.sum(y_pred - y)
+```
+
+**Gradient w.r.t. θ₁:**
+
+```
+∂J(θ)     1   m
+───── = ─── · Σ  x⁽ⁱ⁾ · ( ŷ⁽ⁱ⁾ - y⁽ⁱ⁾ )
+ ∂θ₁     m  i=1
+
+  ⟹  (1/m) * np.dot(X.T, y_pred - y)
+```
 
 > **Why transpose of X in `np.dot()`?**
 > Matrix multiplication requires compatible shapes. Since X is a column vector `(n×1)` and `(y_pred - y)` is also `(n×1)`, direct multiplication is not possible. Taking `X.T` gives shape `(1×n)`, making the dot product valid → result is a scalar.
@@ -56,7 +76,11 @@ $$\frac{\partial J(\theta)}{\partial \theta_1} = \frac{1}{m} \sum_{i=1}^{m} x^{(
 
 OLS gives a **closed-form solution** called the **Normal Equation**:
 
-$$\boxed{\theta = (X^T \cdot X)^{-1} \cdot X^T \cdot y}$$
+```
+┌─────────────────────────────────┐
+│  θ = (Xᵀ · X)⁻¹ · Xᵀ · y      │  ← Closed Form Equation
+└─────────────────────────────────┘
+```
 
 ### `np.c_` Function
 Column-wise concatenation — joins arrays side by side as columns.
@@ -119,7 +143,11 @@ class LinearRegressionOLS():
 
 ### Sigmoid Function
 
-$$g(z) = \frac{1}{1 + e^{-z}} \quad \text{where } z = \theta_0 + \theta_1 x = \theta^T x$$
+```
+           1
+g(z) = ────────    where  z = θ₀ + θ₁x  =  θᵀx
+        1 + e⁻ᶻ
+```
 
 ```
 g(z) ≥ 0.5  →  predict 1
@@ -128,22 +156,32 @@ g(z) < 0.5  →  predict 0
 
 ### Cost Function (Log Loss)
 
-$$J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} \left[ y^{(i)} \log(\hat{y}^{(i)}) + (1 - y^{(i)}) \log(1 - \hat{y}^{(i)}) \right]$$
+```
+          1   m
+J(θ) = - ─── Σ  [ y⁽ⁱ⁾ · log(ŷ⁽ⁱ⁾)  +  (1 - y⁽ⁱ⁾) · log(1 - ŷ⁽ⁱ⁾) ]
+          m  i=1
+```
 
 ### Gradients
 
-$$\frac{\partial J(\theta)}{\partial \theta_0} = \frac{1}{m} \cdot (\hat{y} - y)$$
+```
+∂J(θ)     1
+───── = ─── · (ŷ - y)
+ ∂θ₀     m
 
-$$\frac{\partial J(\theta)}{\partial \theta_1} = \frac{1}{m} \cdot (\hat{y} - y) \cdot x$$
+∂J(θ)     1
+───── = ─── · (ŷ - y) · x
+ ∂θ₁     m
+```
 
 ### Algorithm Steps
 
 ```
 1. Initialize θ₀ & θ₁
 2. GD:
-     z = θ₀ + θ₁x
+     z      = θ₀ + θ₁x
      y_pred = sigmoid(z)
-3. Compute db (∂J/∂θ₀) and dw (∂J/∂θ₁)
+3. Compute db = ∂J/∂θ₀  and  dw = ∂J/∂θ₁
 4. θk = θk − α · ∂J(θ)/∂θk
 5. Repeat steps 2, 3, & 4
 ```
@@ -163,7 +201,9 @@ $$\frac{\partial J(\theta)}{\partial \theta_1} = \frac{1}{m} \cdot (\hat{y} - y)
 
 ### Euclidean Distance Formula
 
-$$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
+```
+d = √[ (x₂ - x₁)² + (y₂ - y₁)² ]
+```
 
 **Example:**
 ```
