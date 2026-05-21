@@ -1,3 +1,4 @@
+
 # 🧠 ML from Scratch — Implementation Notes
 
 > *Hand-crafted notes covering Linear Regression, Logistic Regression, and KNN — implemented from scratch using NumPy.*
