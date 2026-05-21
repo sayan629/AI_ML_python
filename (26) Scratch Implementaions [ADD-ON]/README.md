@@ -2,6 +2,13 @@
 
 > *Hand-crafted notes covering Linear Regression, Logistic Regression, and KNN — implemented from scratch using NumPy.*
 
+
+> <p align="center">
+  <img src="https://img.shields.io/badge/Machine%20Learning-From%20Scratch-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Python-NumPy-yellow?style=for-the-badge&logo=python" />
+  <img src="https://img.shields.io/badge/Open%20Source-Learning-success?style=for-the-badge" />
+</p>
+
 ---
 
 ## 📋 Table of Contents
