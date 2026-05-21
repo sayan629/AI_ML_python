@@ -29,8 +29,8 @@
 ### Parameters
 | Symbol | Meaning |
 |--------|---------|
-| `θ₀` | Bias |
-| `θ₁` | Coefficient / Weight |
+| `θ₀`   | Bias |
+| `θ₁`   | Coefficient / Weight |
 
 ### Algorithm Steps
 
@@ -51,6 +51,7 @@
 J(θ) = ─── · Σ  ( ŷ⁽ⁱ⁾ - y⁽ⁱ⁾ )²
         2m  i=1
 
+        1    m
      = ─── · Σ  ( θ₀ + θ₁x⁽ⁱ⁾ - y⁽ⁱ⁾ )²
         2m  i=1
 ```
@@ -86,7 +87,7 @@ OLS gives a **closed-form solution** called the **Normal Equation**:
 
 ```
 ┌─────────────────────────────────┐
-│  θ = (Xᵀ · X)⁻¹ · Xᵀ · y      │  ← Closed Form Equation
+│  θ = (Xᵀ · X)⁻¹ · Xᵀ · y        │  ← Closed Form Equation
 └─────────────────────────────────┘
 ```
 
