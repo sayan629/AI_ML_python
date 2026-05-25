@@ -1,6 +1,64 @@
 <!-- BANNER -->
 <p align="center">
-  <img src="banner.svg" alt="CreditWise Loan Approval Predictor" width="100%"/>
+<svg width="100%" viewBox="0 0 680 300" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>CreditWise Loan Approval Predictor</title>
+  <desc>Dark navy banner with geometric financial art and project title</desc>
+  <rect width="680" height="300" fill="#0B1120"/>
+  <polygon points="0,300 180,0 0,0" fill="#111C30"/>
+  <polygon points="680,0 500,300 680,300" fill="#111C30"/>
+  <line x1="0" y1="60" x2="680" y2="60" stroke="#1E3A5F" stroke-width="0.5"/>
+  <line x1="0" y1="120" x2="680" y2="120" stroke="#1E3A5F" stroke-width="0.5"/>
+  <line x1="0" y1="180" x2="680" y2="180" stroke="#1E3A5F" stroke-width="0.5"/>
+  <line x1="0" y1="240" x2="680" y2="240" stroke="#1E3A5F" stroke-width="0.5"/>
+  <line x1="100" y1="0" x2="100" y2="300" stroke="#1E3A5F" stroke-width="0.5"/>
+  <line x1="200" y1="0" x2="200" y2="300" stroke="#1E3A5F" stroke-width="0.5"/>
+  <line x1="300" y1="0" x2="300" y2="300" stroke="#1E3A5F" stroke-width="0.5"/>
+  <line x1="400" y1="0" x2="400" y2="300" stroke="#1E3A5F" stroke-width="0.5"/>
+  <line x1="500" y1="0" x2="500" y2="300" stroke="#1E3A5F" stroke-width="0.5"/>
+  <line x1="600" y1="0" x2="600" y2="300" stroke="#1E3A5F" stroke-width="0.5"/>
+  <circle cx="580" cy="60" r="90" fill="none" stroke="#1A6B8A" stroke-width="0.75" opacity="0.5"/>
+  <circle cx="580" cy="60" r="60" fill="none" stroke="#1A6B8A" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="580" cy="60" r="30" fill="none" stroke="#1A6B8A" stroke-width="0.5" opacity="0.35"/>
+  <circle cx="580" cy="60" r="8" fill="#1A6B8A" opacity="0.5"/>
+  <circle cx="100" cy="240" r="70" fill="none" stroke="#163E5C" stroke-width="0.75" opacity="0.5"/>
+  <circle cx="100" cy="240" r="44" fill="none" stroke="#163E5C" stroke-width="0.5" opacity="0.35"/>
+  <polyline points="44,220 80,180 120,200 160,150 200,165 240,130 280,145" fill="none" stroke="#2196F3" stroke-width="1.5" opacity="0.35"/>
+  <rect x="44" y="218" width="5" height="42" rx="1" fill="#1565C0" opacity="0.5"/>
+  <rect x="56" y="195" width="5" height="65" rx="1" fill="#1976D2" opacity="0.6"/>
+  <rect x="68" y="210" width="5" height="50" rx="1" fill="#1565C0" opacity="0.45"/>
+  <rect x="80" y="185" width="5" height="75" rx="1" fill="#42A5F5" opacity="0.55"/>
+  <rect x="92" y="200" width="5" height="60" rx="1" fill="#1976D2" opacity="0.5"/>
+  <rect x="104" y="175" width="5" height="85" rx="1" fill="#42A5F5" opacity="0.6"/>
+  <rect x="116" y="192" width="5" height="68" rx="1" fill="#1565C0" opacity="0.5"/>
+  <rect x="390" y="72" width="200" height="126" rx="12" fill="#0D2137" stroke="#1A6B8A" stroke-width="0.75"/>
+  <rect x="390" y="72" width="200" height="36" rx="12" fill="#112A44"/>
+  <rect x="390" y="90" width="200" height="18" fill="#112A44"/>
+  <circle cx="416" cy="90" r="9" fill="#1A6B8A" opacity="0.7"/>
+  <circle cx="428" cy="90" r="9" fill="#42A5F5" opacity="0.4"/>
+  <text x="448" y="95" font-family="monospace" font-size="10" fill="#64B5F6" opacity="0.8">CREDITWISE</text>
+  <rect x="406" y="118" width="80" height="5" rx="2" fill="#1A6B8A" opacity="0.3"/>
+  <rect x="406" y="130" width="50" height="5" rx="2" fill="#1A6B8A" opacity="0.2"/>
+  <text x="406" y="158" font-family="monospace" font-size="10" fill="#90CAF9" letter-spacing="2" opacity="0.85">4532 •••• 7781</text>
+  <rect x="406" y="168" width="64" height="16" rx="8" fill="#0D6E3B"/>
+  <text x="438" y="180" font-family="sans-serif" font-size="9" fill="#A5D6A7" text-anchor="middle" letter-spacing="1">APPROVED</text>
+  <rect x="0" y="0" width="5" height="300" fill="#1565C0" opacity="0.8"/>
+  <rect x="675" y="0" width="5" height="300" fill="#1565C0" opacity="0.8"/>
+  <rect x="0" y="0" width="680" height="5" fill="#1565C0" opacity="0.8"/>
+  <rect x="0" y="295" width="680" height="5" fill="#1565C0" opacity="0.8"/>
+  <text x="44" y="108" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700" fill="#E3F2FD" letter-spacing="-2">CreditWise</text>
+  <text x="47" y="142" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="400" fill="#90CAF9" letter-spacing="1">Loan Approval Predictor</text>
+  <rect x="44" y="160" width="280" height="1" fill="#1A6B8A" opacity="0.6"/>
+  <text x="46" y="182" font-family="sans-serif" font-size="12" fill="#64B5F6" letter-spacing="0.5">Logistic Regression  ·  KNN  ·  Naive Bayes</text>
+  <rect x="44" y="204" width="52" height="18" rx="9" fill="#0D2137" stroke="#1A6B8A" stroke-width="0.75"/>
+  <text x="70" y="217" font-family="sans-serif" font-size="10" fill="#90CAF9" text-anchor="middle">Python</text>
+  <rect x="104" y="204" width="66" height="18" rx="9" fill="#0D2137" stroke="#1A6B8A" stroke-width="0.75"/>
+  <text x="137" y="217" font-family="sans-serif" font-size="10" fill="#90CAF9" text-anchor="middle">scikit-learn</text>
+  <rect x="178" y="204" width="52" height="18" rx="9" fill="#0D2137" stroke="#1A6B8A" stroke-width="0.75"/>
+  <text x="204" y="217" font-family="sans-serif" font-size="10" fill="#90CAF9" text-anchor="middle">Pandas</text>
+  <rect x="238" y="204" width="76" height="18" rx="9" fill="#0D2137" stroke="#1A6B8A" stroke-width="0.75"/>
+  <text x="276" y="217" font-family="sans-serif" font-size="10" fill="#90CAF9" text-anchor="middle">Matplotlib</text>
+  <text x="44" y="258" font-family="sans-serif" font-size="11" fill="#42A5F5" opacity="0.7" letter-spacing="3">BY SAYAN  ·  ML PROJECT  ·  2025</text>
+</svg>
 </p>
 
 <h1 align="center">CreditWise — Loan Approval Predictor</h1>
@@ -109,7 +167,7 @@ creditwise-loan-approval/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/sayan629/creditwise-loan-approval.git
+git clone https://github.com/your-username/creditwise-loan-approval.git
 cd creditwise-loan-approval
 ```
 
