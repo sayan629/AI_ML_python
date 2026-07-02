@@ -321,14 +321,15 @@ Through this project, I gained hands-on experience with:
 
 ---
 
-# 👨‍💻 Author
+<div align="center">
 
-**Sayan Pal**
+## 👨‍💻 Made with ❤️ by Sayan Pal
 
-🎓 MCA Student | KIIT University
+🎓 **MCA Student @ KIIT University**  
+🤖 **AI | Machine Learning | Data Science**
 
-💻 AI • Machine Learning • Data Science Enthusiast
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Sayan%20Pal-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sayanpal04/)
 
-🔗 **LinkedIn:**[Sayan]*(https://www.linkedin.com/in/sayanpal04?utm_source=share_via&utm_content=profile&utm_medium=member_android)*
+⭐ If you enjoyed this project, don't forget to **Star** this repository!
 
-⭐ If you found this project useful, don't forget to **Star ⭐ this repository!**
+</div>
