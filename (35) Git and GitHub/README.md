@@ -72,6 +72,10 @@ After studying this guide, you will be able to:
 
 ## 🔁 Git vs GitHub
 
+<div align="center">
+<img src="./assets/git-vs-github-demo.svg" alt="Git vs GitHub Comparison" width="800"/>
+</div>
+
 | Git | GitHub |
 |---|---|
 | Version control tool | Hosting platform |
@@ -137,6 +141,10 @@ git log
 
 Branches allow parallel development without affecting the main code.
 
+<div align="center">
+<img src="./assets/branching-merging-demo.svg" alt="Branching and Merging Demo Diagram" width="800"/>
+</div>
+
 ### 🔹 Create a Branch
 ```bash
 git branch feature-branch
@@ -160,6 +168,10 @@ git merge feature-branch
 
 A **merge conflict** occurs when Git cannot automatically combine changes.
 
+<div align="center">
+<img src="./assets/merge-conflict-demo.svg" alt="Merge Conflict Resolution Demo Diagram" width="800"/>
+</div>
+
 **Steps to Resolve:**
 1. Open the conflicted file
 2. Manually edit the conflict markers
@@ -174,6 +186,10 @@ git commit -m "Resolved merge conflict"
 ---
 
 ## ☁️ Working with GitHub
+
+<div align="center">
+<img src="./assets/clone-push-pull-demo.svg" alt="Clone Push Pull Demo Diagram" width="800"/>
+</div>
 
 ### 🔹 Clone a Repository
 ```bash

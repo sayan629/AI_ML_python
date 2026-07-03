@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1000 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8b949e"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="260" fill="#0d1117"/>
+  <text x="500" y="35" fill="#c9d1d9" font-size="20" font-family="Verdana" text-anchor="middle" font-weight="bold">Merge Conflict — Demo</text>
+
+  <!-- File A -->
+  <rect x="60" y="70" width="220" height="120" rx="10" fill="#161b22" stroke="#f85149" stroke-width="2"/>
+  <text x="170" y="95" fill="#f85149" font-size="13" font-family="Verdana" text-anchor="middle" font-weight="bold">Your Branch</text>
+  <text x="80" y="120" fill="#8b949e" font-size="11" font-family="monospace">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</text>
+  <text x="80" y="140" fill="#c9d1d9" font-size="11" font-family="monospace">print("Hello")</text>
+  <text x="80" y="160" fill="#8b949e" font-size="11" font-family="monospace">=======</text>
+
+  <!-- File B -->
+  <rect x="330" y="70" width="220" height="120" rx="10" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <text x="440" y="95" fill="#3fb950" font-size="13" font-family="Verdana" text-anchor="middle" font-weight="bold">Main Branch</text>
+  <text x="350" y="120" fill="#c9d1d9" font-size="11" font-family="monospace">print("Hi there")</text>
+  <text x="350" y="140" fill="#8b949e" font-size="11" font-family="monospace">&gt;&gt;&gt;&gt;&gt;&gt;&gt; main</text>
+
+  <!-- Arrow -->
+  <line x1="570" y1="130" x2="680" y2="130" stroke="#8b949e" stroke-width="3" marker-end="url(#arrow3)"/>
+  <text x="625" y="115" fill="#8b949e" font-size="11" font-family="Verdana" text-anchor="middle">resolve</text>
+
+  <!-- Resolved file -->
+  <rect x="700" y="70" width="240" height="120" rx="10" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="820" y="95" fill="#58a6ff" font-size="13" font-family="Verdana" text-anchor="middle" font-weight="bold">Resolved File ✅</text>
+  <text x="720" y="125" fill="#c9d1d9" font-size="11" font-family="monospace">print("Hello Hi there")</text>
+  <text x="720" y="150" fill="#8b949e" font-size="11" font-family="monospace">git add .</text>
+  <text x="720" y="170" fill="#8b949e" font-size="11" font-family="monospace">git commit -m "Resolved"</text>
+
+  <text x="500" y="230" fill="#6e7681" font-size="12" font-family="Verdana" text-anchor="middle">Edit conflict markers → stage the file → commit the resolution</text>
+</svg>
