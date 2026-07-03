@@ -1,0 +1,34 @@
+<svg viewBox="0 0 1000 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowUp" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3fb950"/>
+    </marker>
+    <marker id="arrowDown" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="260" fill="#0d1117"/>
+  <text x="500" y="35" fill="#c9d1d9" font-size="20" font-family="Verdana" text-anchor="middle" font-weight="bold">Clone • Push • Pull — Demo</text>
+
+  <!-- Local machine -->
+  <rect x="100" y="150" width="260" height="80" rx="14" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <text x="230" y="180" fill="#e3b341" font-size="15" font-family="Verdana" text-anchor="middle" font-weight="bold">💻 Local Machine</text>
+  <text x="230" y="200" fill="#8b949e" font-size="11" font-family="Verdana" text-anchor="middle">your repository copy</text>
+
+  <!-- GitHub remote -->
+  <rect x="640" y="150" width="260" height="80" rx="14" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <text x="770" y="180" fill="#8957e5" font-size="15" font-family="Verdana" text-anchor="middle" font-weight="bold">☁️ GitHub Remote</text>
+  <text x="770" y="200" fill="#8b949e" font-size="11" font-family="Verdana" text-anchor="middle">origin repository</text>
+
+  <!-- push arrow -->
+  <line x1="380" y1="170" x2="620" y2="170" stroke="#3fb950" stroke-width="3" marker-end="url(#arrowUp)"/>
+  <text x="500" y="160" fill="#3fb950" font-size="13" font-family="Verdana" text-anchor="middle" font-weight="bold">git push origin main</text>
+
+  <!-- pull arrow -->
+  <line x1="620" y1="210" x2="380" y2="210" stroke="#58a6ff" stroke-width="3" marker-end="url(#arrowDown)"/>
+  <text x="500" y="225" fill="#58a6ff" font-size="13" font-family="Verdana" text-anchor="middle" font-weight="bold">git pull origin main</text>
+
+  <!-- clone -->
+  <text x="500" y="90" fill="#f0883e" font-size="14" font-family="Verdana" text-anchor="middle" font-weight="bold">git clone https://github.com/username/repository.git</text>
+  <line x1="640" y1="100" x2="360" y2="100" stroke="#f0883e" stroke-width="3" stroke-dasharray="6,4" marker-end="url(#arrowDown)"/>
+</svg>
