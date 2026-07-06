@@ -80,13 +80,7 @@ DL sits at the innermost layer of the AI ecosystem:
 
 A **Neural Network** is a web of interconnected **neurons**, organized into layers, inspired by the human brain.
 
-```
-        Input Layer      Hidden Layer      Output Layer
-           (o)  ────────────▶ (o) ───────────▶ (o)
-           (o)  ─────╲  ╱───▶ (o) ─────╲  ╱───▶
-           (o)  ──────╳───────(o) ──────╳
-                      ╱  ╲            ╱  ╲
-```
+
 
 <div align="center">
 <img src="images/neural_network_example.png" width="450" alt="Neural Network Example"/>
@@ -174,12 +168,6 @@ Input  ◀───  Backward Propagation ◀───  Output
 
 A network with **multiple hidden layers** between the input and output layers.
 
-```
- Input Layer    Hidden Layers     Output Layer
-    (o)  ───────  (o)  (o)  ───────  (o)
-    (o)  ───────  (o)  (o)  ───────  
-    (o)  ───────  (o)  (o)  ───────  (o)
-```
 
 <div align="center">
 <img src="images/multilayer_neural_network.png" width="600" alt="Multilayer Neural Network"/>
