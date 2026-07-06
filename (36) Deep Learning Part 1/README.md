@@ -44,11 +44,11 @@ DL sits at the innermost layer of the AI ecosystem:
 ┌───────────────────────────────────────┐
 │                  AI                   │
 │   ┌───────────────────────────────┐   │
-│   │              ML                │  │
+│   │              ML               │   │
 │   │   ┌───────────────────────┐   │   │
-│   │   │         DL             │   │  │
+│   │   │         DL            │   │   │
 │   │   │   ┌───────────────┐   │   │   │
-│   │   │   │    GenAI       │   │   │  │
+│   │   │   │    GenAI      │   │   │   │
 │   │   │   └───────────────┘   │   │   │
 │   │   └───────────────────────┘   │   │
 │   └───────────────────────────────┘   │
@@ -260,6 +260,6 @@ neuron.weight @ inputs + neuron.bias
   <img src="https://img.shields.io/badge/LinkedIn-Connect%20with%20Sayan-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect with Sayan on LinkedIn"/>
 </a>
 
-⭐ *If these notes helped you, consider giving a star!* ⭐
+⭐ *If these helped you, consider giving a star!* ⭐
 
 </div>
