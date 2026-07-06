@@ -88,6 +88,10 @@ A **Neural Network** is a web of interconnected **neurons**, organized into laye
                       ╱  ╲            ╱  ╲
 ```
 
+<div align="center">
+<img src="images/neural_network_example.png" width="450" alt="Neural Network Example"/>
+</div>
+
 **Types of Artificial Neural Networks (ANN):**
 
 - 🔹 **FNN** — Feedforward Neural Network
@@ -135,6 +139,10 @@ $$
 z = \sum_{i=1}^{n} w_i x_i + b
 $$
 
+<div align="center">
+<img src="images/perceptron.png" width="600" alt="Perceptron Diagram"/>
+</div>
+
 ---
 
 ## ⚡ 5. Activation Functions
@@ -172,6 +180,10 @@ A network with **multiple hidden layers** between the input and output layers.
     (o)  ───────  (o)  (o)  ───────  
     (o)  ───────  (o)  (o)  ───────  (o)
 ```
+
+<div align="center">
+<img src="images/multilayer_neural_network.png" width="600" alt="Multilayer Neural Network"/>
+</div>
 
 > 📌 **Note:** The **number of hidden layers = Depth** of the neural network.
 
