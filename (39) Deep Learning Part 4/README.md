@@ -1,6 +1,6 @@
 # 🧠 Deep Learning Notes — Part 4: CNN (Convolutional Neural Networks)
 
-> Handwritten notes, cleaned up and organized into a proper reference guide.
+> Notes, cleaned up and organized into a proper reference guide.
 
 ---
 
