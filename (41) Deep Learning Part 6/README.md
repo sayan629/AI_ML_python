@@ -1,91 +1,80 @@
-# 🧠 Deep Learning -- Part 6
+<h1 align="center">🧠 Deep Learning — Part 6</h1>
+<h2 align="center">🎬 Sentiment Analysis using RNN</h2>
 
-## 🎬 Sentiment Analysis using RNN
-
-> A practical deep-learning project for **binary sentiment
-> classification** using the **IMDB Movie Reviews Dataset** and a
-> **Recurrent Neural Network (RNN)** with PyTorch.
-
-```{=html}
 <p align="center">
-```
-`<b>`{=html}Text Cleaning → Tokenization → Sequence Processing →
-Embedding → RNN → Training → Evaluation → Prediction`</b>`{=html}
-```{=html}
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/PyTorch-RNN-EE4C2C?logo=pytorch&logoColor=white" alt="PyTorch"/>
+  <img src="https://img.shields.io/badge/NLP-NLTK-2E7D32" alt="NLTK"/>
+  <img src="https://img.shields.io/badge/Task-Binary%20Classification-8A2BE2" alt="Task"/>
+  <img src="https://img.shields.io/badge/Dataset-IMDB%2050K-F5C518" alt="IMDB"/>
 </p>
-```
 
-------------------------------------------------------------------------
+<p align="center">
+  A practical deep-learning project for <b>binary sentiment classification</b> using the
+  <b>IMDB Movie Reviews Dataset</b> and a <b>Recurrent Neural Network (RNN)</b> built with PyTorch.
+</p>
+
+<p align="center">
+  <b>Text Cleaning → Tokenization → Sequence Processing → Embedding → RNN → Training → Evaluation → Prediction</b>
+</p>
+
+![Sentiment Pipeline](./images/sentiment_pipeline.svg)
+
+---
+
+## 📑 Table of Contents
+
+1. [About This Module](#-about-this-module)
+2. [Dataset](#-dataset)
+3. [Problem Definition](#1️⃣-problem-definition)
+4. [Text Preprocessing](#2️⃣-text-preprocessing)
+5. [Stopword Removal](#3️⃣-stopword-removal)
+6. [Stemming](#4️⃣-stemming)
+7. [Text → Numbers](#5️⃣-text--numbers)
+8. [Dataset & DataLoader](#6️⃣-dataset--dataloader)
+9. [RNN Architecture](#7️⃣-rnn-architecture)
+10. [Training the Model](#8️⃣-training-the-model)
+11. [Model Evaluation](#9️⃣-model-evaluation)
+12. [Sentiment Prediction](#-sentiment-prediction)
+13. [Project Architecture](#-complete-project-architecture)
+14. [Technologies](#️-technologies--libraries)
+15. [What I Learned](#-what-i-learned)
+16. [Future Improvements](#-future-improvements)
+
+---
 
 ## 📌 About This Module
 
-This module focuses on building an end-to-end **Natural Language
-Processing (NLP)** pipeline for sentiment analysis.
+This module builds an end-to-end **Natural Language Processing (NLP)** pipeline for sentiment analysis. The model learns from movie reviews and predicts whether a review expresses a:
 
-The model learns from movie reviews and predicts whether a review
-expresses a:
+- 🟢 **Positive** sentiment
+- 🔴 **Negative** sentiment
 
--   🟢 **Positive** sentiment
--   🔴 **Negative** sentiment
+The project combines classical NLP preprocessing with a deep-learning workflow in **PyTorch**.
 
-The project combines classical NLP preprocessing concepts with a
-deep-learning workflow using **PyTorch**.
-
-------------------------------------------------------------------------
+---
 
 ## 📊 Dataset
 
-### IMDB Movie Reviews Dataset
+### IMDB Dataset of 50K Movie Reviews
 
-The project uses the **IMDB Dataset of 50K Movie Reviews**.
+| Column | Description |
+|---|---|
+| `review` | Movie review text |
+| `sentiment` | `positive` or `negative` |
 
-  Column        Description
-  ------------- --------------------------
-  `review`      Movie review text
-  `sentiment`   `positive` or `negative`
+| Review | Sentiment |
+|---|---|
+| *"Watching Oz, you may become comfortable..."* | 🟢 positive |
+| *"Some meaningless thriller spots..."* | 🔴 negative |
 
-### Example
+> ⚠️ The dataset is **not included** in this repository because of GitHub file-size limitations.
 
-``` text
-Review:
-"Watching Oz, you may become comfortable..."
+### 📥 Download
 
-Sentiment:
-positive
-```
+Download **IMDB Dataset of 50K Movie Reviews** from Kaggle, then place `IMDB Dataset.csv` inside `Lecture Dataset/`:
 
-``` text
-Review:
-"Some meaningless thriller spots..."
-
-Sentiment:
-negative
-```
-
-> ⚠️ The dataset is **not included in this repository** because of
-> GitHub file-size limitations.
-
-### 📥 Download Dataset
-
-Download the dataset from Kaggle:
-
-**IMDB Dataset of 50K Movie Reviews**
-
-After downloading, place:
-
-``` text
-IMDB Dataset.csv
-```
-
-inside:
-
-``` text
-44. Deep Learning (Part 6)/Lecture Dataset/
-```
-
-Expected structure:
-
-``` text
+```text
 44. Deep Learning (Part 6)/
 │
 ├── Lecture Dataset/
@@ -97,488 +86,227 @@ Expected structure:
 └── README.md
 ```
 
-------------------------------------------------------------------------
+---
 
-# 🔄 NLP + Deep Learning Pipeline
-
-``` mermaid
-flowchart LR
-    A[🎬 IMDB Reviews] --> B[🧹 Text Cleaning]
-    B --> C[🛑 Stopword Processing]
-    C --> D[🌱 Stemming]
-    D --> E[🔢 Tokenization]
-    E --> F[📏 Sequence Padding]
-    F --> G[🧠 Embedding Layer]
-    G --> H[🔁 RNN]
-    H --> I[🔗 Fully Connected Layer]
-    I --> J[📈 Sigmoid]
-    J --> K[🎯 Sentiment Prediction]
-```
-
-------------------------------------------------------------------------
-
-# 1️⃣ Problem Definition
-
-### Problem Type
+## 1️⃣ Problem Definition
 
 **Supervised Learning → Binary Text Classification**
 
-### Objective
+| Input Review | Predicted Sentiment |
+|---|---|
+| *"This movie was absolutely fantastic!"* | 🟢 Positive |
+| *"This film was boring and terrible."* | 🔴 Negative |
 
-Given a movie review:
+---
 
-``` text
-"This movie was absolutely fantastic!"
-```
+## 2️⃣ Text Preprocessing
 
-the model should predict:
+Raw text can't be fed directly to a neural network — it must be cleaned and converted into numbers.
 
-``` text
-Positive
-```
+### 🧹 Regex Cleaning
 
-For:
+Typical operations:
 
-``` text
-"This film was boring and terrible."
-```
+- Remove HTML tags
+- Remove special characters & punctuation
+- Remove numbers
+- Remove extra spaces
+- Convert to lowercase
 
-the model should predict:
+| Before | After |
+|---|---|
+| `I loved this movie!!! <br/>` | `i loved this movie` |
 
-``` text
-Negative
-```
-
-------------------------------------------------------------------------
-
-# 2️⃣ Text Preprocessing
-
-Raw text cannot be directly processed by a neural network.
-
-Therefore, the review must first be cleaned and transformed into a
-numerical representation.
-
-## 🧹 Regex Cleaning
-
-Regular expressions are used to remove unnecessary characters and HTML
-tags.
-
-Typical operations include:
-
--   Remove HTML tags
--   Remove special characters
--   Remove punctuation
--   Remove numbers
--   Remove extra spaces
--   Convert text to lowercase
-
-### Example
-
-**Before**
-
-``` text
-I loved this movie!!! <br/>
-```
-
-**After**
-
-``` text
-i loved this movie
-```
-
-### Example Code
-
-``` python
+```python
 import re
 
 def clean_text(text):
-    text = re.sub(r'<.*?>', '', text)
-    text = re.sub(r'[^a-zA-Z]', ' ', text)
-    text = text.lower()
-    text = re.sub(r'\s+', ' ', text).strip()
+    text = re.sub(r'<.*?>', '', text)        # remove HTML tags
+    text = re.sub(r'[^a-zA-Z]', ' ', text)   # keep letters only
+    text = text.lower()                       # lowercase
+    text = re.sub(r'\s+', ' ', text).strip()  # remove extra spaces
     return text
 ```
 
-------------------------------------------------------------------------
+---
 
-# 3️⃣ Stopword Removal
+## 3️⃣ Stopword Removal
 
-Stopwords are common words that may contribute relatively little to the
-classification task.
+Stopwords are very common words (`the`, `is`, `was`, `are`, `and`, `of`) that contribute little to classification.
 
-Examples:
-
-``` text
-the
-is
-was
-are
-and
-of
-```
-
-Using NLTK:
-
-``` python
+```python
 from nltk.corpus import stopwords
 
 stop_words = set(stopwords.words("english"))
 
-filtered_words = [
-    word for word in words
-    if word not in stop_words
-]
+filtered_words = [word for word in words if word not in stop_words]
 ```
 
-### Example
+| Before | After |
+|---|---|
+| `This movie was really very good` | `movie really good` |
 
-``` text
-Before:
-"This movie was really very good"
+---
 
-After:
-"movie really good"
-```
+## 4️⃣ Stemming
 
-------------------------------------------------------------------------
+Stemming reduces words to a common root form.
 
-# 4️⃣ 🌱 Stemming
+| Word | Stem |
+|---|---|
+| running | run |
+| played | play |
+| movies | movi |
 
-Stemming attempts to reduce words to a common root form.
-
-Examples:
-
-``` text
-running  → run
-played   → play
-movies   → movi
-```
-
-Using the Porter Stemmer:
-
-``` python
+```python
 from nltk.stem import PorterStemmer
 
 stemmer = PorterStemmer()
-
-stemmed_words = [
-    stemmer.stem(word)
-    for word in words
-]
+stemmed_words = [stemmer.stem(word) for word in words]
 ```
 
-> 💡 Note: Stemming is a preprocessing technique. The exact stem does
-> not always form a grammatically valid English word,
-> e.g. `movies → movi`.
+> 💡 A stem is not always a valid English word — e.g. `movies → movi`.
 
-------------------------------------------------------------------------
+---
 
-# 5️⃣ 🔢 Text → Numbers
+## 5️⃣ Text → Numbers
 
 Neural networks operate on numerical tensors, not raw text.
 
-A typical RNN pipeline converts:
-
-``` text
-"This movie was fantastic"
+```text
+"This movie was fantastic"   →   [12, 48, 7, 931]
 ```
 
-into something conceptually similar to:
+These token IDs are passed into an **Embedding Layer**.
 
-``` text
-[12, 48, 7, 931]
+```text
+Text → Tokenization → Integer Sequence → Padding → Embedding → RNN
 ```
 
-These token IDs are then passed into an **Embedding Layer**.
+> 📝 **TF-IDF** is great for traditional ML models (Logistic Regression, Naive Bayes, SVM). For an RNN pipeline the usual route is *token IDs → embeddings*. Treat them as **alternative representations**, not consecutive steps.
 
-### Important Note
+---
 
-**TF-IDF** is an important text-vectorization technique and is useful
-for traditional machine-learning models such as Logistic Regression,
-Naive Bayes, and SVM.
+## 6️⃣ Dataset & DataLoader
 
-For an RNN-based deep-learning pipeline, however, the usual approach is:
+PyTorch's `Dataset` and `DataLoader` efficiently prepare and feed training data.
 
-``` text
-Text
- ↓
-Tokenization
- ↓
-Integer Sequence
- ↓
-Padding
- ↓
-Embedding
- ↓
-RNN
+```text
+Dataset → DataLoader → Mini-batches → RNN
 ```
 
-So TF-IDF and RNN embeddings should be treated as **alternative
-representations**, rather than mandatory consecutive steps.
+**Why DataLoader?**
 
-------------------------------------------------------------------------
+- ⚡ Efficient batch processing
+- 💾 Better memory usage
+- 🔀 Supports shuffling
+- 🚀 Works well with GPU training
+- 📈 Cleaner training loops
 
-# 6️⃣ 📦 Dataset & DataLoader
-
-PyTorch provides:
-
-``` python
-Dataset
-DataLoader
-```
-
-to efficiently prepare and feed training data to the model.
-
-### Typical Flow
-
-``` text
-Dataset
-   ↓
-DataLoader
-   ↓
-Mini-batches
-   ↓
-RNN
-```
-
-### Why DataLoader?
-
--   ⚡ Efficient batch processing
--   💾 Better memory usage
--   🔀 Supports shuffling
--   🚀 Works well with GPU training
--   📈 Makes training loops cleaner
-
-Example:
-
-``` python
+```python
 from torch.utils.data import DataLoader
 
-train_loader = DataLoader(
-    train_dataset,
-    batch_size=64,
-    shuffle=True
-)
+train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
 ```
 
-------------------------------------------------------------------------
+---
 
-# 7️⃣ 🧠 RNN Architecture
+## 7️⃣ RNN Architecture
 
-A Recurrent Neural Network processes sequential information.
+An RNN processes sequences word by word, carrying a **hidden state** from earlier steps forward.
 
-For example:
+![RNN Sentiment Model](./images/rnn_sentiment_model.svg)
 
-``` text
-"This movie was very good"
-```
+### PyTorch Model
 
-can be processed as:
-
-``` text
-This
- ↓
-movie
- ↓
-was
- ↓
-very
- ↓
-good
-```
-
-The RNN maintains a hidden state that carries information from previous
-time steps.
-
-## 🏗️ Model Architecture
-
-``` mermaid
-flowchart TD
-    A[Input Token IDs] --> B[Embedding]
-    B --> C[RNN Layer]
-    C --> D[Hidden State]
-    D --> E[Fully Connected Layer]
-    E --> F[Sigmoid]
-    F --> G[Positive / Negative]
-```
-
-### PyTorch Example
-
-``` python
+```python
 import torch
 import torch.nn as nn
 
 class RNNModel(nn.Module):
-    def __init__(
-        self,
-        vocab_size,
-        embedding_dim,
-        hidden_dim
-    ):
+    def __init__(self, vocab_size, embedding_dim, hidden_dim):
         super().__init__()
 
-        self.embedding = nn.Embedding(
-            vocab_size,
-            embedding_dim
-        )
-
-        self.rnn = nn.RNN(
-            embedding_dim,
-            hidden_dim,
-            batch_first=True
-        )
-
-        self.fc = nn.Linear(
-            hidden_dim,
-            1
-        )
+        self.embedding = nn.Embedding(vocab_size, embedding_dim)
+        self.rnn = nn.RNN(embedding_dim, hidden_dim, batch_first=True)
+        self.fc = nn.Linear(hidden_dim, 1)
 
     def forward(self, x):
         x = self.embedding(x)
-
         output, hidden = self.rnn(x)
-
-        out = self.fc(
-            hidden[-1]
-        )
-
+        out = self.fc(hidden[-1])
         return out
 ```
 
-------------------------------------------------------------------------
+| Layer | Purpose |
+|---|---|
+| `nn.Embedding` | Converts token IDs into dense vectors |
+| `nn.RNN` | Processes the sequence & updates the hidden state |
+| `nn.Linear` | Maps the final hidden state to one score |
+| Sigmoid | Converts the score into a probability (0–1) |
 
-# 8️⃣ ⚙️ Training the Model
+---
 
-The model is trained using the standard deep-learning optimization
-cycle.
+## 8️⃣ Training the Model
 
-### Training Process
+![Training Loop](./images/training_loop.svg)
 
-``` mermaid
-flowchart LR
-    A[Input Batch] --> B[Forward Pass]
-    B --> C[Prediction]
-    C --> D[Calculate Loss]
-    D --> E[Backpropagation]
-    E --> F[Update Weights]
-    F --> A
-```
+### Setup
 
-### Core Steps
-
-### 1. Forward Pass
-
-``` python
-output = model(x_batch)
-```
-
-### 2. Calculate Loss
-
-``` python
-loss = criterion(
-    output,
-    y_batch
-)
-```
-
-### 3. Backpropagation
-
-``` python
-loss.backward()
-```
-
-### 4. Update Parameters
-
-``` python
-optimizer.step()
+```python
+criterion = nn.BCEWithLogitsLoss()               # includes the sigmoid
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 ```
 
 ### Complete Training Pattern
 
-``` python
+```python
 for epoch in range(epochs):
 
     model.train()
 
     for x_batch, y_batch in train_loader:
 
-        optimizer.zero_grad()
+        optimizer.zero_grad()              # reset gradients
 
-        output = model(x_batch)
+        output = model(x_batch)            # 1. forward pass
 
-        loss = criterion(
-            output,
-            y_batch
-        )
+        loss = criterion(output, y_batch)  # 2. calculate loss
 
-        loss.backward()
+        loss.backward()                    # 3. backpropagation
 
-        optimizer.step()
+        optimizer.step()                   # 4. update parameters
 ```
 
-------------------------------------------------------------------------
+---
 
-# 9️⃣ 📈 Model Evaluation
+## 9️⃣ Model Evaluation
 
-After training, the model must be evaluated on unseen data.
+After training, the model is evaluated on **unseen data**.
 
-Common classification metrics include:
+| Metric | Meaning |
+|---|---|
+| **Accuracy** | Percentage of correct predictions |
+| **Precision** | How many predicted positives are actually positive |
+| **Recall** | How many actual positives were identified |
+| **F1 Score** | Harmonic mean of precision and recall |
 
-  Metric      Meaning
-  ----------- ----------------------------------------------------
-  Accuracy    Percentage of correct predictions
-  Precision   How many predicted positives are actually positive
-  Recall      How many actual positives were identified
-  F1 Score    Harmonic mean of precision and recall
+> Example: `Accuracy = 88%` → about 88 out of every 100 predictions are correct.
 
-### Example
+---
 
-``` text
-Accuracy = 88%
-```
+## 🎯 Sentiment Prediction
 
-means approximately:
+| Review | Prediction |
+|---|---|
+| *"This movie was absolutely fantastic!"* | 🟢 **Positive** |
+| *"This film was boring and terrible."* | 🔴 **Negative** |
 
-``` text
-88 out of every 100 predictions
-were classified correctly.
-```
+---
 
-------------------------------------------------------------------------
+## 🧩 Complete Project Architecture
 
-# 🔟 🎯 Sentiment Prediction
-
-Once trained, the model can classify new reviews.
-
-### Example 1
-
-``` text
-"This movie was absolutely fantastic!"
-```
-
-Prediction:
-
-``` text
-🟢 Positive
-```
-
-### Example 2
-
-``` text
-"This film was boring and terrible."
-```
-
-Prediction:
-
-``` text
-🔴 Negative
-```
-
-------------------------------------------------------------------------
-
-# 🧩 Complete Project Architecture
-
-``` mermaid
+```mermaid
 flowchart TD
     A[IMDB Dataset] --> B[Text Cleaning]
     B --> C[Stopword Processing]
@@ -596,108 +324,61 @@ flowchart TD
     N --> O[Evaluation]
 ```
 
-------------------------------------------------------------------------
+---
 
-# 🛠️ Technologies & Libraries
+## 🛠️ Technologies & Libraries
 
-```{=html}
 <p align="center">
-```
-**Python** • **PyTorch** • **NLTK** • **Pandas** • **NumPy** •
-**Scikit-learn** • **Regex**
-
-```{=html}
+  <b>Python</b> • <b>PyTorch</b> • <b>NLTK</b> • <b>Pandas</b> • <b>NumPy</b> • <b>Scikit-learn</b> • <b>Regex</b>
 </p>
-```
-### Core Concepts
 
--   🐍 Python
--   🔥 PyTorch
--   🧠 Deep Learning
--   🔁 Recurrent Neural Networks
--   💬 Natural Language Processing
--   🧹 Text Preprocessing
--   📊 Binary Classification
--   📈 Model Evaluation
+**Core concepts:** 🐍 Python · 🔥 PyTorch · 🧠 Deep Learning · 🔁 RNN · 💬 NLP · 🧹 Text Preprocessing · 📊 Binary Classification · 📈 Model Evaluation
 
-------------------------------------------------------------------------
+---
 
-# 📚 What I Learned
+## 📚 What I Learned
 
-By completing this module, I learned how to build an NLP deep-learning
-pipeline from raw text to predictions.
+**NLP**
 
-### NLP
+- ✅ Regex-based text cleaning
+- ✅ Stopword processing
+- ✅ Stemming
+- ✅ Tokenization
+- ✅ Numerical text representation
+- ✅ Sequence preparation
 
--   ✅ Regex-based text cleaning
--   ✅ Stopword processing
--   ✅ Stemming
--   ✅ Tokenization
--   ✅ Numerical text representation
--   ✅ Sequence preparation
+**Deep Learning**
 
-### Deep Learning
+- ✅ PyTorch datasets & DataLoaders
+- ✅ Embedding layers
+- ✅ RNN architecture & hidden states
+- ✅ Forward propagation & loss calculation
+- ✅ Backpropagation & optimizer-based updates
+- ✅ Model evaluation & sentiment prediction
 
--   ✅ PyTorch datasets
--   ✅ DataLoaders
--   ✅ Embedding layers
--   ✅ RNN architecture
--   ✅ Hidden states
--   ✅ Forward propagation
--   ✅ Loss calculation
--   ✅ Backpropagation
--   ✅ Optimizer-based weight updates
--   ✅ Model evaluation
--   ✅ Sentiment prediction
+---
 
-------------------------------------------------------------------------
+## 💡 Key Learning
 
-# 💡 Key Learning
+> **An RNN processes sequential data by carrying information from previous time steps through its hidden state.**
 
-> **An RNN is designed to process sequential data by carrying
-> information from previous time steps through its hidden state.**
+Useful for: 📝 Sentiment Analysis · 💬 Text Classification · 🌐 Language Modeling · 🔤 Sequence Prediction · 📖 Text Generation
 
-For NLP, this makes RNNs useful for tasks such as:
+### ⚠️ Practical Note
 
-``` text
-📝 Sentiment Analysis
-💬 Text Classification
-🌐 Language Modeling
-🔤 Sequence Prediction
-📖 Text Generation
+Modern NLP often moves beyond basic RNNs:
+
+```text
+RNN  →  LSTM / GRU  →  Transformer  →  BERT / Modern LLMs
 ```
 
-------------------------------------------------------------------------
+Still, building an RNN from scratch is a great way to understand sequential processing, hidden states, embeddings, backpropagation through time, and text classification.
 
-# ⚠️ Important Practical Note
+---
 
-For modern NLP projects, basic RNNs are often replaced or supplemented
-by architectures such as:
+## 📂 Suggested Repository Structure
 
-``` text
-RNN
- ↓
-LSTM / GRU
- ↓
-Transformer
- ↓
-BERT / Modern LLMs
-```
-
-Nevertheless, implementing an RNN from scratch is an excellent way to
-understand:
-
--   Sequential processing
--   Hidden states
--   Embeddings
--   Backpropagation through time
--   Text classification
-
-------------------------------------------------------------------------
-
-# 📂 Suggested Repository Structure
-
-``` text
+```text
 44. Deep Learning (Part 6)/
 │
 ├── Lecture Dataset/
@@ -712,95 +393,55 @@ understand:
 ├── Refer for MNIST Dataset/
 │   └── ...
 │
+├── images/
+│   ├── sentiment_pipeline.svg
+│   ├── rnn_sentiment_model.svg
+│   └── training_loop.svg
+│
 └── README.md
 ```
 
-> 🔒 Keep large datasets outside Git when they exceed GitHub's file-size
-> limits. You can also add dataset files to `.gitignore`.
+> 🔒 Keep large datasets outside Git, or add them to `.gitignore`.
 
-------------------------------------------------------------------------
+---
 
-# 🚀 Future Improvements
+## 🚀 Future Improvements
 
-This project can be extended by experimenting with:
+- 🔁 LSTM
+- 🔄 GRU
+- 🧠 Bidirectional RNN
+- 🧹 Improved text normalization
+- 📊 Confusion matrix
+- 📈 Training / validation curves
+- ⚡ GPU acceleration
+- 🎯 Hyperparameter tuning
+- 🧪 Dropout & regularization
+- 🤗 Transformer-based sentiment analysis
 
--   🔁 LSTM
--   🔄 GRU
--   🧠 Bidirectional RNN
--   🧹 Improved text normalization
--   📊 Confusion matrix
--   📈 Training/validation curves
--   ⚡ GPU acceleration
--   🎯 Hyperparameter tuning
--   🧪 Dropout and regularization
--   🤗 Transformer-based sentiment analysis
+---
 
-------------------------------------------------------------------------
+## 🏁 Final Takeaway
 
-# 🏁 Final Takeaway
-
-This module provided a complete introduction to **sentiment analysis
-using recurrent neural networks**.
-
-The complete journey is:
-
-``` text
-🎬 Movie Reviews
-        ↓
-🧹 Clean Text
-        ↓
-🔤 Process Tokens
-        ↓
-🔢 Convert Text to Sequences
-        ↓
-📦 Create Dataset & DataLoader
-        ↓
-🧠 Embedding
-        ↓
-🔁 RNN
-        ↓
-🎯 Classification
-        ↓
-📈 Evaluation
-        ↓
-💬 Sentiment Prediction
+```text
+🎬 Movie Reviews → 🧹 Clean Text → 🔤 Process Tokens → 🔢 Sequences
+   → 📦 Dataset & DataLoader → 🧠 Embedding → 🔁 RNN
+   → 🎯 Classification → 📈 Evaluation → 💬 Sentiment Prediction
 ```
 
-------------------------------------------------------------------------
+---
 
-## 👨‍💻 Made by Sayan Pal
+<div align="center">
 
-```{=html}
-<p align="center">
-```
-`<b>`{=html}AI / ML • Deep Learning • NLP • Python •
-PyTorch`</b>`{=html}
-```{=html}
-</p>
-```
-```{=html}
-<p align="center">
-```
+### 👨‍💻 Made by [Sayan Pal](https://www.linkedin.com/in/sayanpal04?utm_source=share_via&utm_content=profile&utm_medium=member_android)
+
+**AI / ML • Deep Learning • NLP • Python • PyTorch**
+
 ⭐ Learning • Building • Experimenting • Improving ⭐
-```{=html}
-</p>
-```
-```{=html}
-<p align="center">
-```
-`<a href="https://www.linkedin.com/in/sayanpal04?utm_source=share_via&utm_content=profile&utm_medium=member_android">`{=html}
-`<b>`{=html}🔗 Connect with Sayan on LinkedIn`</b>`{=html} `</a>`{=html}
-```{=html}
-</p>
-```
 
-------------------------------------------------------------------------
+<a href="https://www.linkedin.com/in/sayanpal04?utm_source=share_via&utm_content=profile&utm_medium=member_android">
+  <img src="https://img.shields.io/badge/Connect%20with%20Sayan-LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"/>
+</a>
 
-```{=html}
-<p align="center">
-```
-`<i>`{=html}Part of my AI / ML Deep Learning learning
-journey.`</i>`{=html}
-```{=html}
-</p>
-```
+<i>Part of my AI / ML Deep Learning learning journey.</i>
+
+</div>
